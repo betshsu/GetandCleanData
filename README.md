@@ -8,7 +8,7 @@ obtained as a zip file from the following link:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 and creates a wide, tidy data set of the average of the mean and standard deviation variables
 for the various accelerometer measurements after grouping by subject and activity.  Please
-see the code book file for more information on the variables and the files.
+see the code book file for more information on the variables of the output file.
 
 Requirements
 ------------
@@ -38,6 +38,8 @@ measurements
   * Remove underscores, dashes, etc
   * Remove all capitalization
   * Avoid abbreviations as much as possible
+* Calculate the average of each variable after grouping by the subject and activity.  Note
+that this step requires use of the dplyr package
   
 Specifics of Each Step
 ----------------------
@@ -82,3 +84,9 @@ deviation subset of the data
 
 ### Rename variables
 Variables were renamed using the sub or gsub functions to conform to tidy data standards
+
+### Average the data
+The data was first grouped by subject and activity using the group_by function in the dplyr
+package.  The average of each variable was then calculated using the summarise_each function
+in the dplyr package.  The variable names were modified to add "avg" to the end of each
+variable.
