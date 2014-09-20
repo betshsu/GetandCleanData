@@ -22,9 +22,9 @@ Description
 The overview of the script is as follows:
 * Read in the required files from the UCI HAR Dataset
 * Merge the files into a single data set as follows:
-..* Add the subject information and the activity information as the first two columns of
+  * Add the subject information and the activity information as the first two columns of
 the training and test datasets
-..* Combine the training and testing datasets using rbind (in other words, the columns are
+  * Combine the training and testing datasets using rbind (in other words, the columns are
 consistent between the training and testing datasets)
 * Assign the variable names as the column names to the combined data set.  The variable names
 were obtained from the features file
